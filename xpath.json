@@ -1,0 +1,13 @@
+{
+    "WebMappMethod": {
+        "WebMappMainPage.LoginMapp": {
+            "account_input": "//input[@placeholder='請輸入您的帳號']",
+            "password_input": "//input[@placeholder='請輸入您的密碼']",
+            "otp_input": "//input[@placeholder='請輸入驗證碼']",
+            "otp_image": "//div[@class='panel-body']//canvas",
+            "otp_incorrect_msg": "//h2[text()='驗證碼錯誤']",
+            "account_incorrect_msg": "//div[@role='dialog']//div[contains(text(), '帳號不存在')]",
+            "password_incorrect_msg": "//div[@role='dialog']//div[contains(text(), '密碼有誤')]"
+        }
+    }
+}
