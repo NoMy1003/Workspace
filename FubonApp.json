@@ -1,0 +1,13 @@
+{
+    "Logout": {
+        "url": "https://scv-ut.fbl.com.tw:9091/Authentication/api/v1/Token/Logout",
+        "method": "POST",
+        "headers": null,
+        "params": null,
+        "payload": null,
+        "expect_status": 200,
+        "expect_response": {
+            "message": "成功"
+        }
+    }
+}
