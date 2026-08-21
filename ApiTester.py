@@ -98,8 +98,14 @@ class APITester:
         api_name: str = "API_Test",
         override_payload: Optional[Dict[str, Any]] = None,
         override_headers: Optional[Dict[str, Any]] = None,
-        override_params: Optional[Dict[str, Any]] = None
+        override_params: Optional[Dict[str, Any]] = None,
+        override_cookies: Optional[Dict[str, str]] = None,
+        clear_session_cookies: bool = False
     ) -> Dict[str, Any]:
+        
+        if clear_session_cookies:
+            self.session.cookies.clear()
+            logging.info("▶ 已清除 Session Cookies")
 
         # Header 繼承鏈處理：default_headers -> api_config.headers -> override_headers
         base_headers = self._deep_update(self.default_headers, api_config.get("headers") or {})
@@ -133,6 +139,7 @@ class APITester:
                 headers=headers,
                 params=params,
                 json=payload if method in ["POST", "PUT", "PATCH"] else None,
+                cookies=override_cookies,
                 timeout=self.timeout
             )
 

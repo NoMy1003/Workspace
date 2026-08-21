@@ -5,7 +5,8 @@ FubonAppResult = {
     "temp_access_token": None,
     "disposable_token": None,
     "access_token": None,
-    "response_text": None
+    "response_text": None,
+    "cookie": None
 }
 
 def InitializeData(target_dict: dict):
